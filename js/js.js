@@ -2,26 +2,27 @@ function $(elemId) {
 	return document.getElementById(elemId);
 }
 function pipei(){
-		
-	 	var manNum=parseInt($(boy_num).value);//得到输入男生的人数
-		var girlNum=parseInt($(girl_num).value);//得到输入女生的人数
-		alert("ss1");
-		var cishu=0;//标记循环的次数
-		if(manNum<girlNum){
-			cishu=manNum;
-		}else if(manNum>girlNum){
-			cishu=girlNum;
-		}else{
-			cishu=manNum;
-			}
-		
-	 	var manSz=new Array("boy_1","boy_2","boy_3","boy_4","boy_5");
-		var girlSz=new Array("girl_1","girl_2","girl_3","girl_4","girl_5");
-		for(var i=0;i<cishu;i++){
-			manMove(manSz[i]);
-			womenMove(girlSz[i]);
+		var manJihe=document.getElementsByClassName("boy");
+		var girlJihe=document.getElementsByClassName("girl");
+		var manArray=new Array(manJihe.length);
+		var womenArray=new Array(girlJihe.length);
+		var cishu=0;
+		for(var i=0;i<manJihe.length;i++){
+			manArray[i]=manJihe[i];
 		}
-		
+		for(var i=0;i<girlJihe.length;i++){
+			womenArray[i]=girlJihe[i];
+		}
+		if(manJihe.length<=girlJihe.length){
+			cishu=manJihe.length;
+		}else{
+			cishu=girlJihe.length;
+			}
+				alert(cishu);
+		for(var i=0;i<cishu;i++){
+			manArray.splice(i,1);
+			womenArray.splice(i,1);
+		}
  }
  function manMove(sex1){
 	 	var fangxiang=document.getElementById(sex1);
@@ -31,3 +32,16 @@ function womenMove(sex1){
 	 	var fangxiang=document.getElementById(sex1);
 		fangxiang.style.left=fangxiang.offsetLeft-10+"px";
 	 }
+
+function generationPeople(gender, v) {
+	if (isNaN(v)) {
+		alert("Error caused by number of " + gender);
+		return;
+	}
+	var obj = $(gender + "_area");
+	var str = ""
+	for (var i = 1; i <= v; i++) {
+		str += "<span class=\"" + gender + "\" id=\"" + gender + "_" + i + "\">" + i + "</span>"
+	}
+	obj.innerHTML += str;
+}

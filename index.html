@@ -3,6 +3,7 @@
 <head>
 	<title>Party</title>
 	<link rel="stylesheet" type="text/css" href="css/css.css">
+	<script type="text/javascript" src="js/js.js"></script>
 </head>
 	<script type="text/javascript" src="js/js.js">
 	</script>
@@ -11,24 +12,12 @@
 	<div id="main_title">FUCK PARTY</div>
 	<div id="control_area">
 		Boy - - Girl<br>
-		<input type="text" name="boy_num">
-		<input type="button" id="to_match" value="M" onClick="pipei()">
-		<input type="text" name="girl_num">
+		<input type="text" name="boy_num" onchange="generationPeople('boy', this.value)" />
+		<input type="button" name="to_match" value="M" onClick="pipei()" />
+		<input type="text" name="girl_num" onchange="generationPeople('girl', this.value)" />
 	</div>
-	<div id="boy_area" class="people_area">
-		<span class="boy" id="boy_1"></span>
-		<span class="boy" id="boy_2"></span>
-		<span class="boy" id="boy_3"></span>
-		<span class="boy" id="boy_4"></span>
-		<span class="boy" id="boy_5"></span>
-	</div>
-	<div id="girl_area" class="people_area">
-		<span class="girl" id="girl_1"></span>
-		<span class="girl" id="girl_2"></span>
-		<span class="girl" id="girl_3"></span>
-		<span class="girl" id="girl_4"></span>
-		<span class="girl" id="girl_5"></span>
-	</div>
+	<div id="boy_area" class="people_area"></div>
+	<div id="girl_area" class="people_area"></div>
 </div>
 </body>
 </html>
