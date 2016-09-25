@@ -27,11 +27,12 @@ function generationPeople(gender, v) {
 		alert("Error caused by number of " + gender);
 		return;
 	}
-	var obj = $(gender + "_area");
-	var startIndex = document.getElementsByClassName(gender).length + 1;
+	v = parseInt(v);
+	var objs = document.getElementsByClassName(gender);
+	var startIndex = objs.length >= 1 ? parseInt(objs[objs.length - 1].innerHTML) : 0;
 	var str = ""
-	for (var i = startIndex; i < startIndex + parseInt(v) ; i++) {
+	for (var i = startIndex + 1; i <= startIndex + v; i++) {
 		str += "<div class=\"" + gender + "\" id=\"" + gender + "_" + i + "\">" + i + "</div>"
 	}
-	obj.innerHTML += str;
+	$(gender + "_area").innerHTML += str;
 }
