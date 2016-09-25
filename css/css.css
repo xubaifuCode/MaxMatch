@@ -1,0 +1,54 @@
+body{margin: 0; padding: 0;}
+#main_area {
+	width: 800px;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#main_title {
+	width: 800px;
+	font-size: 36px;
+	background-color: #342328;
+	text-align: center;
+	color: #FFF;
+}
+#control_area {
+	width: 800px;
+	height: 30px;
+	text-align: center;
+	margin-top:10px;
+	margin-bottom: 10px;
+}
+.people_area {
+	width: 200px;
+	height: 400px;
+
+}
+#boy_area {
+	background-color: blue;
+	float: left;
+}
+#girl_area {
+	background-color: pink;
+	float: right;
+}
+.boy{
+	width: 50px;
+	height: 50px;
+	border-radius:50px; 
+	background-color: green;
+	margin-bottom: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.girl {
+	width: 50px;
+	height: 50px;
+	border-radius:50px; 
+	background-color: orange;
+	margin-bottom: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
