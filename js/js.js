@@ -2,8 +2,8 @@ function $(elemId) {
 	return document.getElementById(elemId);
 }
 function pipei(){
-		var manJihe=document.getElementsByClassName("boy");
-		var girlJihe=document.getElementsByClassName("girl");
+		var manJihe=document.getElementsByClassName("boy")[0];
+		var girlJihe=document.getElementsByClassName("girl")[0];
 		var manArray=new Array(manJihe.length);
 		var womenArray=new Array(girlJihe.length);
 		var cishu=0;
@@ -18,9 +18,9 @@ function pipei(){
 		}else{
 			cishu=girlJihe.length;
 			}
-				alert(cishu);
+				
 		for(var i=0;i<cishu;i++){
-			manArray.splice(i,1);
+			manArray[i].display="none";
 			womenArray.splice(i,1);
 		}
  }
