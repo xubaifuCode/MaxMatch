@@ -20,7 +20,7 @@ function startToMatch() {
 	}
 
 	for (var i = 0; i < len; i++) {
-		setTimeout("cancelDisplay(\"" + boys[i].id + "\", \"" + girls[i].id + "\")", 500);
+		setTimeout("cancelDisplay(\"" + boys[i].id + "\", \"" + girls[i].id + "\")", 500 + i * 500);
 	}
 }
 
