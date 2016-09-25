@@ -20,7 +20,7 @@ body{margin: 0; padding: 0;}
 	margin-bottom: 10px;
 }
 .people_area {
-	width: 200px;
+	width: 50px;
 	height: 400px;
 
 }
@@ -41,9 +41,16 @@ body{margin: 0; padding: 0;}
 	text-align: center;
 	background-color: green;
 	margin-bottom: 1px;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
+}
+.cancel_boy{
+	width: 50px;
+	height: 50px;
+	color: #FFF;
+	border-radius:50px; 
+	line-height: 50px;
+	text-align: center;
+	margin-left: 300px;
+	transition:all 3s;
 }
 .girl {
 	width: 50px;
@@ -53,7 +60,15 @@ body{margin: 0; padding: 0;}
 	text-align: center;
 	background-color: orange;
 	margin-bottom: 1px;
-	margin-left: auto;
-	margin-right: auto;
 	display: block;
+}
+.cancel_girl{
+	width: 50px;
+	height: 50px;
+	color: #FFF;
+	border-radius:50px; 
+	line-height: 50px;
+	text-align: center;
+	margin-left: -300px;
+	transition:all 3s;
 }

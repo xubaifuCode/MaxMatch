@@ -10,9 +10,9 @@
 	<div id="main_title">FUCK PARTY</div>
 	<div id="control_area">
 		Boy - - Girl<br>
-		<input type="text" name="boy_num" onchange="generationPeople('boy', this.value)" />
-		<input type="button" name="to_match" value="M" />
-		<input type="text" name="girl_num" onchange="generationPeople('girl', this.value)" />
+		<input type="text" id="boy_num" onchange="generationPeople('boy', this.value)" />
+		<input type="button" name="to_match" value="M" onclick="startToMatch()" />
+		<input type="text" id="girl_num" onchange="generationPeople('girl', this.value)" />
 	</div>
 	<div id="boy_area" class="people_area"></div>
 	<div id="girl_area" class="people_area"></div>
