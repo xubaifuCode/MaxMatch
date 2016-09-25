@@ -3,23 +3,36 @@ function $(elemId) {
 }
 
 function startToMatch() {
-	cancelDisplay("boy_1", "girl_1");
+	$("to_match").value = "NEXT";
+	var boys = document.getElementsByClassName("boy");
+	var girls = document.getElementsByClassName("girl");
+
+	var len;
+
+	if (boys.length < girls.length) {
+		len = boys.length;
+		$("boy_num").value = 0;
+		$("girl_num").value = girls.length - len;
+	} else {
+		len = girls.length;
+		$("boy_num").value = boys.length - len;
+		$("girl_num").value = 0;
+	}
+
+	for (var i = 0; i < len; i++) {
+		setTimeout("cancelDisplay(\"" + boys[i].id + "\", \"" + girls[i].id + "\")", 500);
+	}
 }
 
 function cancelDisplay(boyId, girlId) {
-	moveTo(boyId, 300);
-	moveTo(girlId, -300);
-	setTimeout("removeElem(\"" + boyId + "\", \"" + girlId + "\")", 3000)
+	$(boyId).setAttribute("class", "cancel_boy");
+	$(girlId).setAttribute("class", "cancel_girl");
+	setTimeout("removeElem(\"" + boyId + "\", \"" + girlId + "\")", 3000);
 }
 
 function removeElem(boyId, girlId) {
-	$(boyId).style.display = "none";
-	$(girlId).style.display = "none";
-}
-
-function moveTo(elemId, toX) {
-	$(elemId).setAttribute("class", toX > 0 ? "cancel_boy" : "cancel_girl");
-
+	$(boyId).remove();
+	$(girlId).remove();
 }
 
 function generationPeople(gender, v) {
